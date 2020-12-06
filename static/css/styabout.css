@@ -1,0 +1,86 @@
+ @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Ubuntu:wght@700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.inner-container h1{
+    font-family: 'Nerko One', cursive;
+font-family: 'Ubuntu', sans-serif;
+
+}
+
+body {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #8e8c8c;
+}
+
+.about-section {
+  background: url("img/p1.jpg") no-repeat left;
+
+  background-size: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inner-container {
+   width: 100%;
+    margin: auto;
+    margin-top: 40px;
+   color: black;
+    background: -webkit-linear-gradient(110deg, #f4f3f8 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #dedde5 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #d2d0e3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #dedee3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #d2d0e8 70%, #bfbdfc 70%);
+  padding: 60px;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.text {
+  font-size: 20px;
+  color: "#545454";
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+      font-family: 'Nerko One', cursive;
+font-family: 'Ubuntu', sans-serif;
+}
+.skills {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media screen and (min-width: 1200px) {
+  .about-section {
+    background-size: 55%;
+    padding: 100px 0;
+  }
+  .inner-container {
+    width: 55%;
+    padding: 150px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .about-section {
+    padding: 100px 40px;
+  }
+  .inner-container {
+    padding: 80px;
+  }
+}

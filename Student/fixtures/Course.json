@@ -1,0 +1,37 @@
+[
+  {
+    "model": "Student.Course",
+    "pk": 1,
+    "fields": {
+      "name": "CSC215",
+      "description": "C LANGUAGE",
+      "image": "courses/courses.png"
+    }
+  },
+  {
+    "model": "Student.Course",
+    "pk": 2,
+    "fields": {
+      "name": "CSC111",
+      "description": "JAVA 1",
+      "image": "courses/courses.png"
+    }
+  },  {
+    "model": "Student.Course",
+    "pk": 3,
+    "fields": {
+      "name": "CSC430",
+      "description": "COMPILER ",
+      "image": "courses/courses.png"
+    }
+  }
+,  {
+    "model": "Student.Course",
+    "pk": 4,
+    "fields": {
+      "name": "SLM 101",
+      "description": "QURAN",
+      "image": "courses/courses.png"
+    }
+  }
+]

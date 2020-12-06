@@ -1,0 +1,4 @@
+.jumbotron{
+    background: linear-gradient(110deg, #dedee3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #d2d0e8 70%, #bfbdfc 70%);
+text-align: center;
+}

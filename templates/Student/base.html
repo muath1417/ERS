@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+     <head>
+          <!-- Required meta tags -->
+        <title>page</title>
+
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+         <style>
+                p.invalid-feedback {
+                    display: block;
+                }
+                .card-columns {
+                        column-count: 3;
+                 }
+                 .card-deck {
+                        column-count: 3;
+                 }
+         </style>
+        <link rel="stylesheet" href="/static/css/profile.css">
+          <link rel="stylesheet" href="/static/css/stybase.css">
+
+
+    </head>
+    <body>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nerko+One&family=Roboto+Slab:wght@900&family=Ubuntu:wght@700&display=swap');
+</style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="{% url 'index' %}"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <b> Student ERS</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{% url 'index' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Courses
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for c in courses %}
+              <a class="dropdown-item" href="{% url 'Student:timeline' course_id=c.id %}">{{c.name}}</a>
+              <div class="dropdown-divider"></div>
+            {% endfor %}
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'Student:my_timeline' %}">Timeline</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'Student:about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'Student:guidelines' %}">Guidelines</a>
+      </li>
+      {% if student.is_authenticated %}
+        <li class="nav-item"><a  class="nav-link" href="{% url 'Student:logout' %}">Logout</a></li>
+      {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'Student:register' %}">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'Student:login' %}">Login</a></li>
+      {% endif %}
+
+    </ul>
+      {% if student.is_authenticated %}
+      <ul class="nav pull-right mr-5">
+        <li>
+            <div class="ui search posts" id="search_posts">
+              <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search Posts...">
+                <i class="search icon"></i>
+              </div>
+              <div class="post-results"></div>
+            </div>
+        </li>
+        <li>
+            <div class="ui search" id="search_courses">
+              <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search courses...">
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+        </li>
+
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{% url 'Student:profile' %}" id="navbarProfileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{student.email}}  <span>&nbsp;</span><i class="fa fa-user"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarProfileDropdown">
+              <a class="dropdown-item" href="{% url 'Student:my_timeline'  %}">My Timeline</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'Student:password_change'  %}">Change Password</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'Student:logout'  %}">Logout</a>
+              <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      </ul>
+      {% endif %}
+
+  </div>
+</nav>
+    <div class="mt-4">&nbsp;</div>
+    {% block content %}
+    {% endblock %}
+
+
+
+
+<center>
+
+    <footer class="page-footer font-small blue">
+<a class="btn btn-primary" href='mailto:ksuers2020@gmail.com' role="button">Report Post</a>
+
+</footer>
+</center>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="/static/js/jsi18.js"></script>
+    <script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+    <script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+    <script type="text/javascript" src="/static/admin/js/core.js"></script>
+    <script type="text/javascript" src="/static/js/course_search.js"></script>
+    <script type="text/javascript" src="/static/js/search_posts.js"></script>
+
+
+    </body>
+
+
+</html>

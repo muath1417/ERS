@@ -1,0 +1,29 @@
+[{
+    "model": "user_unique_email.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$cRCd42Wml9Bm$uxnKbTEbKdhiMI3wnu4FuT4Sr9oCAWERFNqczVZKRUE=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin_student",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-08-29T20:25:51.872Z",
+        "email": "admin_student@localhost.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+  {
+    "model": "Student.Student",
+    "pk": 2,
+    "fields": {
+      "email":"admin_student@localhost.com",
+      "password":"hello_world",
+      "username":"admin_student",
+      "accept": "True"
+    }
+  }
+]
